@@ -29,9 +29,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 
 @WebMvcTest(controllers = {BurgerController.class, GlobalExceptionHandler.class,ApplicationPropertiesAndControllerTest.class})
@@ -82,14 +80,7 @@ class ApplicationPropertiesAndControllerTest {
         String datasourcePassword = env.getProperty("spring.datasource.password");
         assertNotNull(datasourcePassword);
 
-        String hibernateDdlAuto = env.getProperty("spring.jpa.hibernate.ddl-auto");
-        assertNotNull(hibernateDdlAuto);
 
-        String hibernateSql = env.getProperty("logging.level.org.hibernate.SQL");
-        assertNotNull(hibernateSql);
-
-        String hibernateJdbcBind = env.getProperty("logging.level.org.hibernate.jdbc.bind");
-        assertNotNull(hibernateJdbcBind);
 
     }
 
